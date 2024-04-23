@@ -10,7 +10,7 @@ if __name__ == '__main__':
     random.seed(fix_seed)
     torch.manual_seed(fix_seed)
     np.random.seed(fix_seed)
-
+#保证无论运行多少次，每次得到的随机初始化结果都是相同的
     parser = argparse.ArgumentParser(description='iTransformer')
 
     # basic config
