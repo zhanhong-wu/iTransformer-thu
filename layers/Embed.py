@@ -18,7 +18,7 @@ class PositionalEmbedding(nn.Module):
         pe[:, 1::2] = torch.cos(position * div_term)
 
         pe = pe.unsqueeze(0)
-        self.register_buffer('pe', pe)
+        self.register_buffer('pe', pe)  #这是一个 PyTorch 中 nn.Module 的方法，用于注册一个缓冲区 (buffer)。 缓冲区与模型参数类似，但它们不会被优化器更新。
 
     def forward(self, x):
         return self.pe[:, :x.size(1)]
