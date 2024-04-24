@@ -24,7 +24,7 @@ class PositionalEmbedding(nn.Module):
         return self.pe[:, :x.size(1)]
 
 
-class TokenEmbedding(nn.Module):   #通过一维卷积将输入[batch_size, seq_len, C_in]转换成[batch_size, d_model, seq_len]
+class TokenEmbedding(nn.Module):   
     def __init__(self, c_in, d_model):
         super(TokenEmbedding, self).__init__()
         padding = 1 if torch.__version__ >= '1.5.0' else 2
